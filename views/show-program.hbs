@@ -1,0 +1,51 @@
+{{>header}}
+<title>BabyCare-{{program.metaTitle}}</title>
+<meta name="description" content={{program.metaDescription}}>
+<meta name="keywords" content={{program.metaKeywords}}>
+
+{{>navbar}}
+
+{{>hero}}
+
+<div class="container-fluid service py-5">
+    <div class="row mx-3">
+        <div class="col-md-9">
+            <h2 class="text-center bg-primary text-light p-1">{{program.name}}</h2>
+            <table class="table table-bordered text-light bg-primary text-center">
+                <thead>
+                    <tr>
+                        <th>Program Fee</th>
+                        <th>Seats</th>
+                        <th>Duration</th>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&#8377;{{program.fee}}</td>
+                        <td>{{program.seats}}</td>
+                        <td>{{program.Duration}}Hours</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+            <p class="text-justify mb-3">{{program.shortDescription}}</p>
+            <img src="/{{program.cover}}" height="400px" width="100%" alt="">
+            <div class="card p-3">
+                <p class="text-justify mb-3">{{program.longDescription}}</p>
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h4 class="bg-primary text-center p-2 text-light">Our Other Programs</h4>
+            {{#each allPrograms}}
+            <a href="/program/{{_id}}" class="serviceSidebar d-block p-2 mb-1 text-light  fs-5 ps-4">{{name}}</a>
+            {{/each}}
+        </div>
+    </div>
+
+</div>
+
+{{>footer}}
